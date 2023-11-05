@@ -1,0 +1,10 @@
+@import "~bootstrap/css/bootstrap";
+
+.fondo-azul {
+    background-color: blue;
+    color: rgb(199, 49, 49);
+}
+
+body {
+    background-color: #39d451; /* Código de color para gris claro */
+}
