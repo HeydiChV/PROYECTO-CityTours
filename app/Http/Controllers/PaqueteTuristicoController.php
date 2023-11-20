@@ -9,11 +9,18 @@ class PaqueteTuristicoController extends Controller
 {
     public function index()
     {
-        // Obtener y mostrar la lista de paquetes turísticos desde la base de datos
+        $paquetes = PaqueteTuristico::all();
+        return view('paquetes.index', compact('paquetes'));
     }
 
     public function show($id)
     {
-        // Obtener y mostrar los detalles del paquete turístico con el ID proporcionado
+        $paquete = PaqueteTuristico::findOrFail($id);
+        return view('paquetes.show', compact('paquete'));
+    }
+
+    // Otras acciones según sea necesario, como create, store, edit, update, destroy, etc.
+    public function registroPaquete(){
+        return view('registro-paquetes');
     }
 }

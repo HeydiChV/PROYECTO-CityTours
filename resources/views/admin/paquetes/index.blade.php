@@ -1,9 +1,27 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Administración de Paquetes Turísticos en Puno</h1>
-    <!-- Mostrar la lista de paquetes turísticos con opciones de administración aquí -->
+    <h1>Gestión de Paquetes Turísticos en Puno (Admin)</h1>
+
+    <a href="{{ route('admin.paquetes.create') }}">Añadir Nuevo Paquete</a>
+
+    @if(count($paquetes) > 0)
+        <ul>
+            @foreach($paquetes as $paquete)
+                <li>
+                    <h2>{{ $paquete->nombre }}</h2>
+                    <p>{{ $paquete->descripcion }}</p>
+                    <p><strong>Región:</strong> {{ $paquete->regionTuristica->nombre }}</p>
+                    <p><strong>Precio:</strong> ${{ $paquete->precio }}</p>
+                    <!-- Otros campos según sea necesario -->
+
+                    <a href="{{ route('admin.paquetes.edit', $paquete->id) }}">Editar</a>
+                    <a href="{{ route('admin.paquetes.show', $paquete->id) }}">Ver Detalles</a>
+                    <!-- Agregar enlaces para eliminar, desactivar, etc. según sea necesario -->
+                </li>
+            @endforeach
+        </ul>
+    @else
+        <p>No hay paquetes turísticos disponibles en este momento.</p>
+    @endif
 @endsection
-
-@extends('layouts.app')
-

@@ -1,4 +1,3 @@
-
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -46,6 +45,53 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::put('/reservas/{id}', [AdminReservaController::class, 'update']);
 });
 
+//------------------------------------------------------------------------
+Route::get('/pagina-web/registro-usuario', 
+[UserProfileController::class ,'registroUsuario']
+)->name('registro.usuarios');
+
+Route::get('/pagina-web/registro-paquete', 
+[PaqueteTuristicoController::class ,'registroPaquete']
+)->name('registro.paquetes');
+
+Route::post('/pagina-web/guardar-usuario', 
+[UserProfileController::class ,'guardarUsuario']
+)->name('guardar.usuario');
+
+Route::post('/pagina-web/guardar-paquete', 
+[PaqueteTuristicoController::class ,'guardarPaquete']
+)->name('guardar.paquete');
+
+Route::delete('/pagina-web/eliminar-usuarios/{id}',
+[UserProfileController::class, 'eliminarUsuario']
+)->name('eliminar.usuarios');
+
+Route::delete('/pagina-web/eliminar-paquetes/{id}',
+[PaqueteTuristicoController::class, 'eliminarPaquete']
+)->name('eliminar.paquetes');
+
+//------------
+Route::get('/lista-usuarios', 
+[UserProfileController::class ,'listarUsuario']
+)->name('lista-usuarios');
 
 
+Route::get('/lista-paquetes', 
+[PaqueteTuristicoController::class ,'listarPaquete']
+)->name('lista-paquetes');
 
+Route::get('/editar-usuarios/{id}',
+[UserProfileController::class, 'editarUsuario']
+)->name('editar.usuario');
+
+Route::put('/actualizar-usuario/{id}', 
+[UserProfileController::class ,'actualizarUsuario']
+)->name('actualizar.usuario');
+
+Route::get('/editar-paquetes/{id}',
+[PaqueteTuristicoController::class, 'editarPaquete']
+)->name('editar.paquete');
+
+Route::put('/actualizar-paquete/{id}', 
+[PaqueteTuristicoController::class ,'actualizarPaquete']
+)->name('actualizar.paquete');
