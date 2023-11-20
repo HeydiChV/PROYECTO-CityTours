@@ -16,7 +16,6 @@
         <label for="telefono">Teléfono:</label>
         <input type="tel" name="telefono" value="{{ auth()->user()->telefono }}">
 
-        <!-- Otros campos según sea necesario -->
 
         <button type="submit">Guardar Cambios</button>
     </form>

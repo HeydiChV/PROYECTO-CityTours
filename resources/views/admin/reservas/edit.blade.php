@@ -23,7 +23,7 @@
         <label for="cantidad_personas">Cantidad de Personas:</label>
         <input type="number" name="cantidad_personas" value="{{ $reserva->cantidad_personas }}" required>
 
-        <!-- Otros campos según sea necesario -->
+
 
         <button type="submit">Guardar Cambios</button>
     </form>

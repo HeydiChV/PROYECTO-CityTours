@@ -9,7 +9,7 @@
             <li><a href="{{ route('paquetes.index') }}">Paquetes Turísticos</a></li>
             <li><a href="{{ route('reservas.index') }}">Tus Reservas</a></li>
             <li><a href="{{ route('perfil.show') }}">Tu Perfil</a></li>
-            <!-- Agregar más enlaces según sea necesario, por ejemplo, enlaces para administradores -->
+           
         </ul>
     </nav>
 

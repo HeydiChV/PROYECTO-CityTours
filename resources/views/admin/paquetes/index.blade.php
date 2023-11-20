@@ -13,11 +13,9 @@
                     <p>{{ $paquete->descripcion }}</p>
                     <p><strong>Región:</strong> {{ $paquete->regionTuristica->nombre }}</p>
                     <p><strong>Precio:</strong> ${{ $paquete->precio }}</p>
-                    <!-- Otros campos según sea necesario -->
 
                     <a href="{{ route('admin.paquetes.edit', $paquete->id) }}">Editar</a>
                     <a href="{{ route('admin.paquetes.show', $paquete->id) }}">Ver Detalles</a>
-                    <!-- Agregar enlaces para eliminar, desactivar, etc. según sea necesario -->
                 </li>
             @endforeach
         </ul>

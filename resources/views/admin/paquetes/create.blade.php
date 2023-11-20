@@ -14,7 +14,6 @@
 
         <label for="region_id">Región Turística:</label>
         <select name="region_id" required>
-            <!-- Opciones de regiones turísticas obtenidas de la base de datos -->
             @foreach($regiones as $region)
                 <option value="{{ $region->id }}">{{ $region->nombre }}</option>
             @endforeach
@@ -23,7 +22,6 @@
         <label for="precio">Precio:</label>
         <input type="number" name="precio" required>
 
-        <!-- Otros campos según sea necesario -->
 
         <button type="submit">Agregar Paquete</button>
     </form>

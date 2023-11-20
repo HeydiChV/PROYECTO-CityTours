@@ -11,10 +11,8 @@
                     <p><strong>Usuario:</strong> {{ $reserva->usuario->nombre }} ({{ $reserva->usuario->correo }})</p>
                     <p><strong>Fecha de Reserva:</strong> {{ $reserva->fecha_reserva }}</p>
                     <p><strong>Cantidad de Personas:</strong> {{ $reserva->cantidad_personas }}</p>
-                    <!-- Otros campos según sea necesario -->
 
                     <a href="{{ route('admin.reservas.show', $reserva->id) }}">Ver Detalles</a>
-                    <!-- Agregar enlaces para cambiar el estado, cancelar, etc. según sea necesario -->
                 </li>
             @endforeach
         </ul>
